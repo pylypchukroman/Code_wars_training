@@ -75,3 +75,18 @@ function oddOrEven(array) {
 function minMax(arr) {
   return [Math.min(...arr), Math.max(...arr)];
 }
+
+function longestWord(string) {
+  const str = string.split(' ');
+  let longest = 0;
+  let word = null;
+  for (let i = 0; i < str.length - 1; i++) {
+    if (longest < str[i].length) {
+      longest = str[i].length;
+      word = str[i];
+    }
+  }
+  console.log(word);
+}
+
+longestWord('The quick brown fox jumped over the lazy dog');
