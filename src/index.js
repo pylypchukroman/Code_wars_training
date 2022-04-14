@@ -45,3 +45,33 @@ function descendingOrder(n) {
   console.log(str);
   return str;
 }
+
+//Growth of a Population 7 kyu
+function nbYear(p0, percent, aug, p) {
+  let i = 0;
+  while (true) {
+    if (p0 >= p) {
+      return i;
+    }
+    p0 = p0 * (1 + percent / 100) + aug;
+    i++;
+  }
+}
+//Odd or Even? 7 kyu
+function oddOrEven(array) {
+  if (array.length == 0) {
+    return 'even';
+  }
+  const total = array.reduce((acc, num) => {
+    return acc + num;
+  });
+  console.log(total);
+  if (total % 2) {
+    return 'odd';
+  }
+  return 'even';
+}
+//The highest profit wins! 7 kyu
+function minMax(arr) {
+  return [Math.min(...arr), Math.max(...arr)];
+}
