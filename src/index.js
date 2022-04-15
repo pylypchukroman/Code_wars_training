@@ -161,3 +161,8 @@ function rowWeights(array) {
 function repeater(string, n) {
   return string.repeat(n);
 }
+
+//Flatten and sort an array
+function flattenAndSort(array) {
+  return [].concat(...array).sort((a, b) => a - b);
+}
