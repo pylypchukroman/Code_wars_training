@@ -86,7 +86,54 @@ function longestWord(string) {
       word = str[i];
     }
   }
-  console.log(word);
+  return word;
 }
 
 longestWord('The quick brown fox jumped over the lazy dog');
+
+function makenumb(n, x) {
+  let y = 0;
+  for (let i = n; i <= x; i++) {
+    r = i / i + 1 - Math.cos(i) * Math.abs(x);
+    console.log(r);
+  }
+}
+makenumb(2, 5);
+
+//Make a function that does arithmetic!
+function arithmetic(a, b, operator) {
+  switch ((a, b, operator)) {
+    case 'add':
+      return a + b;
+      break;
+
+    case 'subtract':
+      return a - b;
+      break;
+
+    case 'multiply':
+      return a * b;
+      break;
+
+    case 'divide':
+      return a / b;
+      break;
+  }
+}
+
+//Shortest Word
+function findShort(s) {
+  const arr = s.split(' ');
+  const newArr = arr.map(elem => {
+    return elem.length;
+  });
+  return Math.min(...newArr);
+}
+
+//Remove the minimum
+function removeSmallest(numbers) {
+  let newNumbers = [...numbers];
+  let indexOfMin = newNumbers.indexOf(Math.min(...newNumbers));
+  newNumbers.splice(indexOfMin, 1);
+  return newNumbers;
+}
