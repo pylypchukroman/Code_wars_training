@@ -166,3 +166,15 @@ function repeater(string, n) {
 function flattenAndSort(array) {
   return [].concat(...array).sort((a, b) => a - b);
 }
+
+const response = [
+  { ccy: 'USD', bace_ccy: 'UAH', buy: '29.25', sale: '32.18' },
+  { ccy: 'EUR', bace_ccy: 'UAH', buy: '31.82', sale: '34.80' },
+  { ccy: 'BTC', bace_ccy: 'USD', buy: '38390.85', sale: '42431.99' },
+  { ccy: 'USD', bace_ccy: 'UAH', buy: '11.25', sale: '32.18' },
+  { ccy: 'EUR', bace_ccy: 'UAH', buy: '40.82', sale: '34.80' },
+];
+
+console.log(response);
+const neededArr = response.filter(el => el.ccy == 'USD' || el.ccy == 'EUR');
+console.log(neededArr);
