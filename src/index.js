@@ -90,6 +90,16 @@ function longestWord(string) {
 }
 
 longestWord('The quick brown fox jumped over the lazy dog');
+////
+function findLongestWord(str) {
+  const longestWord = str.split(' ').sort(function (a, b) {
+    return b.length - a.length;
+  });
+  console.log(longestWord[0]);
+  return longestWord[0].length;
+}
+findLongestWord('The quick brown fox jumped over the lazy dog');
+/////
 
 function makenumb(n, x) {
   let y = 0;
@@ -166,7 +176,7 @@ function repeater(string, n) {
 function flattenAndSort(array) {
   return [].concat(...array).sort((a, b) => a - b);
 }
-
+/////
 const response = [
   { ccy: 'USD', bace_ccy: 'UAH', buy: '29.25', sale: '32.18' },
   { ccy: 'EUR', bace_ccy: 'UAH', buy: '31.82', sale: '34.80' },
@@ -175,6 +185,7 @@ const response = [
   { ccy: 'EUR', bace_ccy: 'UAH', buy: '40.82', sale: '34.80' },
 ];
 
-console.log(response);
+// console.log(response);
 const neededArr = response.filter(el => el.ccy == 'USD' || el.ccy == 'EUR');
-console.log(neededArr);
+// console.log(neededArr);
+////
