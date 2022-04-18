@@ -219,3 +219,11 @@ function longest(s1, s2) {
     .join('');
   return uniq;
 }
+//Round up to the next multiple of 5
+function roundToNext5(n) {
+  return Math.ceil(n / 5) * 5;
+}
+//Reverse words
+function reverseWords(str) {
+  return str.split('').reverse().join('').split(' ').reverse().join(' ');
+}
