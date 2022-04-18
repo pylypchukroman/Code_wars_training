@@ -189,3 +189,33 @@ const response = [
 const neededArr = response.filter(el => el.ccy == 'USD' || el.ccy == 'EUR');
 // console.log(neededArr);
 ////
+//Most digits
+function findLongest(array) {
+  const newArr = array.join(',').split(',');
+  const longestWord = newArr.reduce(function (longest, currentNum) {
+    if (currentNum.length > longest.length) {
+      return currentNum;
+    } else return longest;
+  }, '');
+  return +longestWord;
+}
+//Sum of Minimums!
+function sumOfMinimums(arr) {
+  console.log(arr);
+  let minSum = 0;
+  arr.forEach(element => {
+    minSum += Math.min(...element);
+  });
+  return minSum;
+}
+//Two to One
+function longest(s1, s2) {
+  const arr1 = s1.split('');
+  const arr2 = s2.split('');
+  const newArr = arr1.concat(arr2);
+  const uniq = newArr
+    .filter((str, index, array) => array.indexOf(str) === index)
+    .sort()
+    .join('');
+  return uniq;
+}
