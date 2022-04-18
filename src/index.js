@@ -227,3 +227,24 @@ function roundToNext5(n) {
 function reverseWords(str) {
   return str.split('').reverse().join('').split(' ').reverse().join(' ');
 }
+//Find the capitals
+var capitals = function (word) {
+  const arr = word.split('');
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == arr[i].toUpperCase()) {
+      newArr.push(arr.indexOf(arr[i]));
+    }
+  }
+  return newArr;
+};
+//Beginner Series #3 Sum of Numbers
+function getSum(a, b) {
+  if (a == b) {
+    return a;
+  } else if (a > b) {
+    return a + getSum(a - 1, b);
+  } else {
+    return a + getSum(a + 1, b);
+  }
+}
