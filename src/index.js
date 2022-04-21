@@ -248,3 +248,34 @@ function getSum(a, b) {
     return a + getSum(a + 1, b);
   }
 }
+// Digitize
+function digitize(n) {
+  const arr = Array.from(n.toString()).map(num => (num = +num));
+  return arr;
+}
+
+//Find the Missing Number
+function missingNo(nums) {
+  let result = [];
+
+  for (let i = 0; i <= Math.max.apply(null, nums); i++) {
+    if (!nums.includes(i)) {
+      result.push(i);
+    }
+  }
+  return Number(result.join(''));
+}
+//Halving Sum
+function halvingSum(n) {
+  let result = 0;
+  while (n > 0) {
+    result += n;
+    n = Math.floor(n / 2);
+  }
+  return result;
+}
+//Reversed Strings
+export function solution(str: string): string {
+  const arr = str.split('');
+  return arr.reverse().join('');
+}
