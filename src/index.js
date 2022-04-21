@@ -292,3 +292,10 @@ function sequence(x) {
   }
   return arr.sort();
 }
+//Sum of all arguments
+function sum(...arg) {
+  let a = arg.reduce((prev, numb) => {
+    return prev + numb;
+  }, 0);
+  return a;
+}
