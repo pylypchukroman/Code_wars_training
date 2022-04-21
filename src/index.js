@@ -310,3 +310,7 @@ function vaporcode(string) {
   }
   return newArr.join('  ');
 }
+//Predict your age!
+function predictAge(...age) {
+  return Math.floor(Math.sqrt(age.map(num => num * num).reduce((sum, numb) => sum + numb)) / 2);
+}
