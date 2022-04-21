@@ -299,3 +299,14 @@ function sum(...arg) {
   }, 0);
   return a;
 }
+//V A P O R C O D E
+function vaporcode(string) {
+  arr = string.toUpperCase().split('');
+  newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== ' ') {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr.join('  ');
+}
