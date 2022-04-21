@@ -275,7 +275,20 @@ function halvingSum(n) {
   return result;
 }
 //Reversed Strings
-export function solution(str: string): string {
+export function solution(str) {
   const arr = str.split('');
   return arr.reverse().join('');
+}
+//Highest and Lowest
+function highAndLow(numbers) {
+  const arr = numbers.split(' ');
+  return [Math.max(...arr), Math.min(...arr)].join(' ');
+}
+//Guess the Sequence
+function sequence(x) {
+  let arr = [];
+  for (let i = 1; i <= x; i++) {
+    arr.push(i);
+  }
+  return arr.sort();
 }
