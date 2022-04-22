@@ -345,3 +345,17 @@ function between(a, b) {
   }
   return arr;
 }
+//Thinkful - Logic Drills: Traffic light
+function updateLight(current) {
+  switch (current) {
+    case 'green':
+      return 'yellow';
+      break;
+    case 'yellow':
+      return 'red';
+      break;
+    case 'red':
+      return 'green';
+      break;
+  }
+}
