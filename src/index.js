@@ -359,3 +359,7 @@ function updateLight(current) {
       break;
   }
 }
+//Filter Long Words
+function filterLongWords(str, n) {
+  return str.split(' ').filter(el => el.length > n);
+}
