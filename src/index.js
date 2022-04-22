@@ -363,3 +363,7 @@ function updateLight(current) {
 function filterLongWords(str, n) {
   return str.split(' ').filter(el => el.length > n);
 }
+//Friend or Foe?
+function friend(friends) {
+  return friends.filter(friend => friend.length == 4);
+}
