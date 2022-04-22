@@ -314,3 +314,34 @@ function vaporcode(string) {
 function predictAge(...age) {
   return Math.floor(Math.sqrt(age.map(num => num * num).reduce((sum, numb) => sum + numb)) / 2);
 }
+
+//All Star Code Challenge #3
+function removeVowels(str) {
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  let result = [];
+  for (let i = 0; i < str.length; i++) {
+    let flag = true;
+    for (let j = 0; j < vowels.length; j++) {
+      if (str[i] === vowels[j]) {
+        flag = false;
+        break;
+      }
+    }
+    if (flag) result.push(str[i]);
+  }
+  return result.join('');
+}
+removeVowels('drake'); //“drk”
+
+//Working with arrays I (and why your code fails in some katas)
+function withoutLast(arr) {
+  return arr.slice(0, arr.length - 1);
+}
+//What is between?
+function between(a, b) {
+  let arr = [];
+  for (let i = a; i <= b; i++) {
+    arr.push(i);
+  }
+  return arr;
+}
