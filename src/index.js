@@ -101,15 +101,6 @@ function findLongestWord(str) {
 findLongestWord('The quick brown fox jumped over the lazy dog');
 /////
 
-function makenumb(n, x) {
-  let y = 0;
-  for (let i = n; i <= x; i++) {
-    r = i / i + 1 - Math.cos(i) * Math.abs(x);
-    console.log(r);
-  }
-}
-makenumb(2, 5);
-
 //Make a function that does arithmetic!
 function arithmetic(a, b, operator) {
   switch ((a, b, operator)) {
@@ -373,3 +364,17 @@ function fourSeven(n) {
   while (n == 7) return 4;
   return 0;
 }
+function qw(num) {
+  const arr = num.toString().split('');
+  const cube = arr.length;
+  let result = 0;
+  for (let i = 0; i < arr.length; i++) {
+    const res = Math.pow(arr[i], cube);
+    result += res;
+  }
+  if (result % cube == 0) {
+    return true;
+  }
+  return false;
+}
+qw(1741725);
