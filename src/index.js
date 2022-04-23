@@ -378,3 +378,20 @@ function qw(num) {
   return false;
 }
 qw(1741725);
+//Square Every Digit
+function squareDigits(num) {
+  return Number(
+    num
+      .toString()
+      .split('')
+      .map(x => x * x)
+      .join(''),
+  );
+}
+//max diff - easy
+function maxDiff(list) {
+  if (list.length < 1) {
+    return 0;
+  }
+  return Math.max(...list) - Math.min(...list);
+}
