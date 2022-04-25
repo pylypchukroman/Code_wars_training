@@ -395,3 +395,26 @@ function maxDiff(list) {
   }
   return Math.max(...list) - Math.min(...list);
 }
+
+///////////////////////
+function validBraces(braces) {
+  const matches = { '(': ')', '{': '}', '[': ']' };
+  let stack = [];
+  let currentChar;
+
+  for (let i = 0; i < braces.length; i++) {
+    currentChar = braces[i];
+
+    if (matches[currentChar]) {
+      stack.push(currentChar);
+    } else {
+      if (currentChar !== matches[stack.pop()]) {
+        return 'Wrong order';
+      }
+    }
+  }
+
+  return stack.length === 0;
+}
+
+console.log(validBraces('{}'));
