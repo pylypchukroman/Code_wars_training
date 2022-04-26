@@ -95,7 +95,6 @@ function findLongestWord(str) {
   const longestWord = str.split(' ').sort(function (a, b) {
     return b.length - a.length;
   });
-  console.log(longestWord[0]);
   return longestWord[0].length;
 }
 findLongestWord('The quick brown fox jumped over the lazy dog');
@@ -417,4 +416,23 @@ function validBraces(braces) {
   return stack.length === 0;
 }
 
-console.log(validBraces('{}'));
+function openOrSenior(data) {
+  // let arr = [];
+  // for (let i = 0; i < data.length; i++) {
+  //   if (data[i][0] >= 55 || data[i][1] >= 7) {
+  //     arr.push((data[i] = 'Senior'));
+  //   }
+  //   arr.push((data[i] = 'Open'));
+  // }
+  const arr = data.map(number => (number[0] >= 55 && number[1] > 7 ? 'Senior' : 'Open'));
+  console.log(arr);
+
+  // console.log(arr);
+}
+
+openOrSenior([
+  [3, 12],
+  [55, 1],
+  [91, -2],
+  [53, 23],
+]);
