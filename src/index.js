@@ -415,7 +415,7 @@ function validBraces(braces) {
 
   return stack.length === 0;
 }
-
+/////////////
 function openOrSenior(data) {
   // let arr = [];
   // for (let i = 0; i < data.length; i++) {
@@ -425,7 +425,7 @@ function openOrSenior(data) {
   //   arr.push((data[i] = 'Open'));
   // }
   const arr = data.map(number => (number[0] >= 55 && number[1] > 7 ? 'Senior' : 'Open'));
-  console.log(arr);
+  return arr;
 
   // console.log(arr);
 }
@@ -436,3 +436,22 @@ openOrSenior([
   [91, -2],
   [53, 23],
 ]);
+//Sort Numbers
+function solution(nums) {
+  if (nums == null) {
+    return [];
+  }
+  return nums.sort((a, b) => a - b);
+}
+console.log(solution([]));
+
+///Sum up the random string
+function findNumbers(str) {
+  let result = 0;
+  const numbers = str.match(/\d+/g).map(number => Number(number));
+  for (let i = 0; i < numbers.length; i++) {
+    result += numbers[i];
+  }
+  return result;
+}
+findNumbers('In 2015, I want to know how much does iPhone 6+ cost?');
