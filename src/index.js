@@ -455,3 +455,20 @@ function findNumbers(str) {
   return result;
 }
 findNumbers('In 2015, I want to know how much does iPhone 6+ cost?');
+
+//Count characters in your string
+function count(string) {
+  const counter = {};
+  string.split('').forEach(x => {
+    counter[x] = counter[x] ? counter[x] + 1 : 1;
+  });
+  return counter;
+}
+//Build Tower
+function towerBuilder(nFloors) {
+  let tower = [];
+  for (let i = 0; i < nFloors; i++) {
+    tower.push(' '.repeat(nFloors - i - 1) + '*'.repeat(i * 2 + 1) + ' '.repeat(nFloors - i - 1));
+  }
+  return tower;
+}
