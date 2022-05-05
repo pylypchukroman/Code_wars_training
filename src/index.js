@@ -565,3 +565,14 @@ function stringTransformer(str) {
     .reverse()
     .join(' ');
 }
+//Count letters in string
+function letterCount(s) {
+  let result = {};
+  const arr = s.split('');
+  for (let i = 0; i < arr.length; ++i) {
+    let a = arr[i];
+    if (result[a] != undefined) ++result[a];
+    else result[a] = 1;
+  }
+  return result;
+}
