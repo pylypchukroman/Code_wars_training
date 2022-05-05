@@ -443,7 +443,6 @@ function solution(nums) {
   }
   return nums.sort((a, b) => a - b);
 }
-console.log(solution([]));
 
 ///Sum up the random string
 function findNumbers(str) {
@@ -515,4 +514,42 @@ function findUniq(arr) {
   return +arr.filter(value => {
     return arr.indexOf(value) == arr.lastIndexOf(value);
   });
+}
+//Smallest Permutation
+function permutation(n) {
+  let newArr = [];
+  const arr = n.toString().split('');
+  if (arr[arr.length - 1] == 0) {
+    return Number(arr.join(''));
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] != 0) {
+      newArr.push(arr[i]);
+    }
+  }
+
+  const result = newArr.sort((a, b) => a - b).join('');
+  return Number(result);
+}
+console.log(permutation(642950));
+// Kebabize
+function kebabize(str) {
+  return str
+    .replace(/[0-9]/g, '')
+    .split(/(?=[A-Z])/)
+    .join('-')
+    .toLowerCase();
+}
+
+//String transformer
+function stringTransformer(str) {
+  const arr = str.split('');
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === arr[i].toUpperCase()) {
+      arr[i] = arr[i].toLowerCase();
+    } else {
+      arr[i] = arr[i].toUpperCase();
+    }
+  }
+  return arr.join('').split(' ').reverse().join(' ');
 }
