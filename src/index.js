@@ -553,3 +553,15 @@ function stringTransformer(str) {
   }
   return arr.join('').split(' ').reverse().join(' ');
 }
+// or
+
+function stringTransformer(str) {
+  let lowercase = 'abcdefghijklmnopqrstuvwxyz';
+  return str
+    .split('')
+    .map(letter => (lowercase.indexOf(letter) === -1 ? letter.toLowerCase() : letter.toUpperCase()))
+    .join('')
+    .split(' ')
+    .reverse()
+    .join(' ');
+}
