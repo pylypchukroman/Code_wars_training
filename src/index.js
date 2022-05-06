@@ -576,3 +576,9 @@ function letterCount(s) {
   }
   return result;
 }
+///Array.diff
+function arrayDiff(a, b) {
+  let arr = a.filter(i => b.indexOf(i) < 0);
+  console.log(arr);
+  return arr;
+}
