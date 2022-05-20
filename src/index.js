@@ -531,7 +531,7 @@ function permutation(n) {
   const result = newArr.sort((a, b) => a - b).join('');
   return Number(result);
 }
-console.log(permutation(642950));
+// console.log(permutation(642950));
 // Kebabize
 function kebabize(str) {
   return str
@@ -579,6 +579,16 @@ function letterCount(s) {
 ///Array.diff
 function arrayDiff(a, b) {
   let arr = a.filter(i => b.indexOf(i) < 0);
-  console.log(arr);
   return arr;
 }
+//
+function findNumber(arr) {
+  const result = arr
+    .flat(2)
+    .map(num => (num.length < 1 ? '0' : num))
+    .toString()
+    .match(/\d+/g)
+    .map(Number);
+  return result;
+}
+console.log(findNumber(['1,2,3', '5,6,7-10', '12-16', '']));
