@@ -583,12 +583,24 @@ function arrayDiff(a, b) {
 }
 //
 function findNumber(arr) {
-  const result = arr
-    .flat(2)
+  let result = [];
+  const flatArr = arr
     .map(num => (num.length < 1 ? '0' : num))
     .toString()
-    .match(/\d+/g)
-    .map(Number);
-  return result;
+    .split(',');
+  for (let i = 0; i < flatArr.length; i++) {
+    if (flatArr[i].includes('-')) {
+      const intervalArr = flatArr[i].split('-');
+      let low = +intervalArr[0];
+      let high = +intervalArr[1];
+      for (let i = low; i <= high; i++) {
+        result.push(low++);
+      }
+    }
+    result.push(flatArr[i]);
+  }
+  return result.map(Number).filter(function (value) {
+    return !Number.isNaN(value);
+  });
 }
 console.log(findNumber(['1,2,3', '5,6,7-10', '12-16', '']));
