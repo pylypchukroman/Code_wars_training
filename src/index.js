@@ -599,8 +599,19 @@ function findNumber(arr) {
     }
     result.push(flatArr[i]);
   }
-  return result.map(Number).filter(function (value) {
-    return !Number.isNaN(value);
-  });
+  return result.map(Number).filter(num => !Number.isNaN(num));
 }
-console.log(findNumber(['1,2,3', '5,6,7-10', '12-16', '']));
+// console.log(findNumber(['1,2,3', '5,6,7-10', '12-16', '']));
+
+///
+function dontGiveMeFive(start, end) {
+  let result = [];
+  for (let i = start; i <= end; i++) {
+    if (i.toString().includes('5')) {
+      continue;
+    }
+    result.push(i);
+  }
+  return result.length;
+}
+console.log(dontGiveMeFive(4, 17));
