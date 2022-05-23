@@ -614,4 +614,17 @@ function dontGiveMeFive(start, end) {
   }
   return result.length;
 }
-console.log(dontGiveMeFive(4, 17));
+// console.log(dontGiveMeFive(4, 17));
+
+//Minimize Sum Of Array (Array Series #1)
+function findmin(arr) {
+  let result = [];
+  const sorted = arr.sort((a, b) => a - b);
+  const first = arr.splice(0, arr.length / 2);
+  const second = sorted.sort((a, b) => b - a);
+  for (let i = 0; i < first.length; i++) {
+    result.push(first[i] * second[i]);
+  }
+  return result.reduce((acc, num) => (acc += num));
+}
+findmin([9, 2, 8, 7, 5, 4, 0, 6]);
