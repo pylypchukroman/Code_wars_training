@@ -628,3 +628,16 @@ function findmin(arr) {
   return result.reduce((acc, num) => (acc += num));
 }
 findmin([9, 2, 8, 7, 5, 4, 0, 6]);
+
+///
+function getCommonElements(array1, array2) {
+  const newArr = [];
+
+  for (let i = 0; i < array2.length; i++) {
+    if (array1.includes(array2[i])) {
+      newArr.push(array2[i]);
+    }
+  }
+  return newArr;
+}
+console.log(getCommonElements([1, 3, 5], [0, 8, 5, 3]));
