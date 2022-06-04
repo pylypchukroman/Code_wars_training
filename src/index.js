@@ -640,4 +640,9 @@ function getCommonElements(array1, array2) {
   }
   return newArr;
 }
-console.log(getCommonElements([1, 3, 5], [0, 8, 5, 3]));
+// console.log(getCommonElements([1, 3, 5], [0, 8, 5, 3]));
+// Sum of two lowest positive integers
+function sumTwoSmallestNumbers(numbers) {
+  const sortedArr = numbers.sort((a, b) => a - b);
+  return sortedArr[0] + sortedArr[1];
+}
