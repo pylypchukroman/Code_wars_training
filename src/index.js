@@ -646,3 +646,51 @@ function sumTwoSmallestNumbers(numbers) {
   const sortedArr = numbers.sort((a, b) => a - b);
   return sortedArr[0] + sortedArr[1];
 }
+function find(str, wordsArr) {
+  console.log(`Вхідна строка -> ${str}`);
+  console.log(`Вхідний масив для порівняння -> ${wordsArr}`);
+  let result = [];
+  const strArr = str.split(' ');
+  for (let i = 0; i < strArr.length; i++) {
+    for (let j = 0; j < wordsArr.length; j++) {
+      if (strArr[i] != wordsArr[j]) {
+        result.push(strArr[i]);
+      }
+    }
+  }
+  return `Результат -> ${result.join(' ')}`;
+}
+// console.log(find('This is Sparta', ['is']));
+///
+function getDivisorsCnt(n) {
+  let result = [];
+  let i = 0;
+  while (i < n) {
+    i++;
+    if (n % i === 0) {
+      console.log(i);
+      result.push(i);
+    }
+  }
+  return result.length;
+}
+// console.log(getDivisorsCnt(30));
+///
+// console.log(+!+[] + !+[] + !+[] + !+[] + !+[]);
+///
+function printerError(s) {
+  let regExp = /[^n-z]/g;
+  const trimS = s.toLowerCase().replace(regExp, '');
+  return `${trimS.length}/${s.length}`;
+}
+// console.log(printerError('aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz'));
+//
+function oddCount(n) {
+  return Math.floor(n / 2);
+}
+// console.log(oddCount(15023));
+// function consecutive(arr, a, b) {
+function consecutive(arr, a, b) {
+  return arr.includes(a) && arr.includes(b);
+}
+console.log(consecutive([1, 3, 5, 7], 3, 7));
