@@ -693,4 +693,133 @@ function oddCount(n) {
 function consecutive(arr, a, b) {
   return arr.includes(a) && arr.includes(b);
 }
-console.log(consecutive([1, 3, 5, 7], 3, 7));
+// console.log(consecutive([1, 3, 5, 7], 3, 7));
+
+//
+function wallpaper(l, w, h) {
+  let result;
+  const numbers = [
+    'zero',
+    'one',
+    'two',
+    'three',
+    'four',
+    'five',
+    'six',
+    'seven',
+    'eight',
+    'nine',
+    'ten',
+    'eleven',
+    'twelve',
+    'thirteen',
+    'fourteen',
+    'fifteen',
+    'sixteen',
+    'seventeen',
+    'eighteen',
+    'nineteen',
+    'twenty',
+  ];
+  if (Math.floor(l) == 0 || Math.floor(w) == 0 || Math.floor(h) == 0) {
+    return 'zero';
+  }
+  const wallp = Math.floor((l + w + h) * 1.15);
+  for (let i = 0; i < numbers.length; i++) {
+    if (i == wallp) {
+      result = numbers[i];
+    }
+  }
+  return result;
+}
+// console.log(wallpaper(6.3, 5.8, 3.13));
+///
+// const duplicate = [1, 2, 3, 4, 5];
+// console.log([...[...duplicate], ...[...duplicate]]);
+//
+function isNarcissistic(n) {
+  const split = n.toString().split('');
+  const l = split.length;
+  const result = split.map(el => Math.pow(el, l)).reduce((prev, acc) => (acc += prev));
+  return n === result;
+}
+// console.log(isNarcissistic(153));
+//
+function mxdiflg(a1, a2) {
+  if (a1.length === 0 || a2.length === 0) return -1;
+  let l1 = a1.map(str => str.length);
+  let l2 = a2.map(str => str.length);
+  return Math.max(Math.max(...l1) - Math.min(...l2), Math.max(...l2) - Math.min(...l1));
+}
+// console.log(
+//   mxdiflg(
+//     [
+//       'hoqq',
+//       'bbllkw',
+//       'oox',
+//       'ejjuyyy',
+//       'plmiis',
+//       'xxxzgpsssa',
+//       'xxwwkktt',
+//       'znnnnfqknaz',
+//       'qqquuhii',
+//       'dvvvwz',
+//     ],
+//     ['cccooommaaqqoxii', 'gggqaffhhh', 'tttoowwwmmww'],
+//   ),
+// );
+///
+function countDevelopers(list) {
+  return list.filter(x => x.continent == 'Europe' && x.language == 'JavaScript').length;
+}
+// console.log(
+//   countDevelopers([
+//     {
+//       firstName: 'Noah',
+//       lastName: 'M.',
+//       country: 'Switzerland',
+//       continent: 'Europe',
+//       age: 19,
+//       language: 'JavaScript',
+//     },
+//     {
+//       firstName: 'Maia',
+//       lastName: 'S.',
+//       country: 'Tahiti',
+//       continent: 'Oceania',
+//       age: 28,
+//       language: 'JavaScript',
+//     },
+//     {
+//       firstName: 'Shufen',
+//       lastName: 'L.',
+//       country: 'Taiwan',
+//       continent: 'Asia',
+//       age: 35,
+//       language: 'HTML',
+//     },
+//     {
+//       firstName: 'Sumayah',
+//       lastName: 'M.',
+//       country: 'Tajikistan',
+//       continent: 'Asia',
+//       age: 30,
+//       language: 'CSS',
+//     },
+//   ]),
+// );
+///Find the vowels
+function vowelIndices(word) {
+  let result = [];
+  const vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
+  const arrWord = word.toLowerCase().split('');
+  for (let i = 0; i < arrWord.length; i++) {
+    for (let j = 0; j < vowels.length; j++) {
+      if (arrWord[i] === vowels[j]) {
+        result.push(i + 1);
+      }
+    }
+  }
+  return result;
+}
+console.log(vowelIndices('Apple'));
