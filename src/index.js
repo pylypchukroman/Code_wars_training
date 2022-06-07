@@ -830,31 +830,77 @@ function greetDevelopers(list) {
   });
   return list;
 }
-console.log(
-  greetDevelopers([
-    {
-      firstName: 'Sofia',
-      lastName: 'I.',
-      country: 'Argentina',
-      continent: 'Americas',
-      age: 35,
-      language: 'Java',
-    },
-    {
-      firstName: 'Lukas',
-      lastName: 'X.',
-      country: 'Croatia',
-      continent: 'Europe',
-      age: 35,
-      language: 'Python',
-    },
-    {
-      firstName: 'Madison',
-      lastName: 'U.',
-      country: 'United States',
-      continent: 'Americas',
-      age: 32,
-      language: 'Ruby',
-    },
-  ]),
-);
+// console.log(
+//   greetDevelopers([
+//     {
+//       firstName: 'Sofia',
+//       lastName: 'I.',
+//       country: 'Argentina',
+//       continent: 'Americas',
+//       age: 35,
+//       language: 'Java',
+//     },
+//     {
+//       firstName: 'Lukas',
+//       lastName: 'X.',
+//       country: 'Croatia',
+//       continent: 'Europe',
+//       age: 35,
+//       language: 'Python',
+//     },
+//     {
+//       firstName: 'Madison',
+//       lastName: 'U.',
+//       country: 'United States',
+//       continent: 'Americas',
+//       age: 32,
+//       language: 'Ruby',
+//     },
+//   ]),
+// );
+///
+function isCoprime(x, y) {
+  let i = 0;
+  let q = 0;
+  let xArr = [];
+  let yArr = [];
+  let result = [];
+  while (i < x) {
+    i++;
+    if (x % i == 0) {
+      xArr.push(i);
+    }
+  }
+  while (q < y) {
+    q++;
+    if (y % q == 0) {
+      yArr.push(q);
+    }
+  }
+  for (let w = 0; w < xArr.length; w++) {
+    if (yArr.includes(xArr[w])) {
+      result.push(xArr[w]);
+    }
+  }
+  if (result[result.length - 1] != 1) {
+    return false;
+  }
+  return true;
+}
+// console.log(isCoprime(20, 27));
+//
+function findChildren(dancingBrigade) {
+  const arr = dancingBrigade.toLowerCase().split('');
+  let res = '';
+  const letters = [...new Set(arr)].sort();
+  for (let i = 0; i < letters.length; i++) {
+    for (let j = 0; j < dancingBrigade.length; j++) {
+      if (letters[i] == arr[j]) res += arr[j];
+    }
+  }
+  return res
+    .split('')
+    .map((x, i) => (x !== res[i - 1] ? (x = x.toUpperCase()) : x))
+    .join('');
+}
+// console.log(findChildren('AaaaaZazzz'));
