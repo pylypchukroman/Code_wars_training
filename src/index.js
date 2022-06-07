@@ -904,3 +904,17 @@ function findChildren(dancingBrigade) {
     .join('');
 }
 // console.log(findChildren('AaaaaZazzz'));
+///
+function last(x) {
+  if (!x.trim().length) return x.split(' ');
+  return x.split(' ').sort((a, b) => a[a.length - 1].localeCompare(b[b.length - 1]));
+}
+// console.log(last('man i need a taxi up to ubud'));
+//
+function incrementer(nums) {
+  return nums
+    .map((num, inx) => num + (inx + 1))
+    .map(num => (num >= 10 ? num - 10 : num))
+    .map(num => (num >= 10 ? num - 10 : num));
+}
+console.log(incrementer([1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 9, 9, 8]));
