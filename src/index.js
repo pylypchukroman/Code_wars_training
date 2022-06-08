@@ -917,4 +917,22 @@ function incrementer(nums) {
     .map(num => (num >= 10 ? num - 10 : num))
     .map(num => (num >= 10 ? num - 10 : num));
 }
-console.log(incrementer([1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 9, 9, 8]));
+// console.log(incrementer([1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 9, 9, 8]));
+///
+function disemvowel(str) {
+  const vowels = ['a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y'];
+  // const reg = /aeiouyAEIOUY/;
+  return str.replace(/[aeiouyAEIOUY]/gi, '');
+}
+// console.log(disemvowel('This website is for losers LOL!'));
+//
+function accum(s) {
+  let result = [];
+  const arrS = s.toLowerCase().split('');
+  for (let i = 0; i < arrS.length; i++) {
+    result.push(arrS[i].repeat(i + 1));
+  }
+  return result.map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('-');
+}
+
+// console.log(accum('ZpglnRxqenU'));
