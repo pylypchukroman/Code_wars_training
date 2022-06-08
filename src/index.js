@@ -936,3 +936,63 @@ function accum(s) {
 }
 
 // console.log(accum('ZpglnRxqenU'));
+///
+const arrUser = [
+  {
+    id: 2320,
+    name: '',
+    items: [
+      {
+        id: 43555444,
+        name: '',
+      },
+      {
+        id: 43555445,
+        name: '',
+      },
+      {
+        id: 43555446,
+        name: '',
+      },
+    ],
+  },
+  {
+    id: 2321,
+    name: '',
+    items: [
+      {
+        id: 42555444,
+        name: '',
+      },
+      {
+        id: 42555445,
+        name: '',
+      },
+    ],
+  },
+];
+const arrString = [
+  'NewExtra1',
+  'subject1',
+  'subject2',
+  'subject3',
+  'NewExtra2',
+  'subject1',
+  'subject2',
+  'subject3',
+];
+function makeUserProfile(data) {
+  let counter = 0;
+  for (let i = 0; i < arrUser.length; i += 1) {
+    arrUser[i].name = data[counter];
+    counter += 1;
+    let item = arrUser[i].items;
+    for (let j = 0; j < item.length; j += 1) {
+      item[j].name = data[counter];
+      counter += 1;
+    }
+  }
+}
+
+makeUserProfile(arrString);
+// console.log(arrUser);
