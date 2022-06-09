@@ -996,3 +996,53 @@ function makeUserProfile(data) {
 
 makeUserProfile(arrString);
 // console.log(arrUser);
+function solution(str, ending) {
+  let index = ending.length;
+  return (
+    str
+      .split('')
+      .splice(str.length - index, index)
+      .join('') == ending
+  );
+}
+// console.log(solution('abcde', 'abc'));
+//
+function findSum(...arg) {
+  let result = 0;
+  for (let i = 0; i < arg.length; i++) {
+    if (arg.length < 1) {
+      return 0;
+    } else if (arg[i] < 0) {
+      return -1;
+    }
+    result += arg[i];
+  }
+  return result;
+}
+// console.log(findSum(1, -2, 4));
+//
+var isPalindrome = function (x) {
+  return x == x.toString().split('').reverse().join('') ? true : false;
+};
+// console.log(isPalindrome(121));
+//
+var removeDuplicates = function (nums) {
+  if (nums.length == 0) return 0;
+
+  let i = 0;
+  for (let j = 1; j < nums.length; j++) {
+    if (nums[j] !== nums[i]) {
+      i++;
+      nums[i] = nums[j];
+    }
+  }
+
+  return i + 1;
+};
+// console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+//
+var lengthOfLastWord = function (s) {
+  const arr = s.trim().split(' ');
+  return arr[arr.length - 1].length;
+};
+// console.log(lengthOfLastWord('   fly me   to   the moon  '));
