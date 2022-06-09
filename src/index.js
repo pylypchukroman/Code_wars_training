@@ -1021,12 +1021,12 @@ function findSum(...arg) {
 }
 // console.log(findSum(1, -2, 4));
 //
-var isPalindrome = function (x) {
+const isPalindrome = function (x) {
   return x == x.toString().split('').reverse().join('') ? true : false;
 };
 // console.log(isPalindrome(121));
 //
-var removeDuplicates = function (nums) {
+const removeDuplicates = function (nums) {
   if (nums.length == 0) return 0;
 
   let i = 0;
@@ -1041,8 +1041,31 @@ var removeDuplicates = function (nums) {
 };
 // console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
 //
-var lengthOfLastWord = function (s) {
+const lengthOfLastWord = function (s) {
   const arr = s.trim().split(' ');
   return arr[arr.length - 1].length;
 };
 // console.log(lengthOfLastWord('   fly me   to   the moon  '));
+///
+const plusOne = function (arr) {
+  const length = arr.length;
+  console.log(length);
+  const negative = arr.filter(num => num < 0);
+  const bigNum = arr.filter(num => num >= 10);
+  if (negative.length == 0 && bigNum.length == 0 && length != 0) {
+    for (let i = arr.length - 1; i >= 0; i--) {
+      arr[i]++;
+
+      if (arr[i] > 9) {
+        arr[i] = 0;
+      } else {
+        return arr;
+      }
+    }
+
+    arr.unshift(1);
+    return arr;
+  }
+  return null;
+};
+// console.log(plusOne([]));
