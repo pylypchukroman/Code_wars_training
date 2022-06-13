@@ -1069,3 +1069,69 @@ const plusOne = function (arr) {
   return null;
 };
 // console.log(plusOne([]));
+function isIsogram(str) {
+  return str.length == [...new Set(str)].length;
+}
+// console.log(isIsogram('aba'));
+//
+function XO(str) {
+  let x = 0;
+  let o = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] == 'x') {
+      x++;
+    } else if (str[i] == 'o') {
+      o++;
+    }
+  }
+  return x == o;
+}
+// console.log(XO('xxxm'));
+//
+function divisors(integer) {
+  let result = [];
+  let i = 1;
+
+  while (i < integer - 1) {
+    i++;
+    if (integer % i == 0) {
+      result.push(i);
+    }
+  }
+  return result.length === 0 ? `${integer} is prime` : result;
+}
+// console.log(divisors(13));
+//
+function twoOldestAges(ages) {
+  return ages.sort((a, b) => a - b).splice(ages.length - 2, 2);
+}
+// console.log(twoOldestAges([6, 5, 83, 5, 3, 18]));
+//
+function findSum(n) {
+  let i = 0;
+  let result = [];
+  while (i < n) {
+    i++;
+    if (i % 3 == 0 || i % 5 == 0) {
+      result.push(i);
+    }
+  }
+  return result.reduce((num, acc) => (acc += num));
+}
+// console.log(findSum(5));
+//
+function removeUrlAnchor(url) {
+  return url.split('#')[0];
+}
+// console.log(removeUrlAnchor('www.codewars.com?page=1'));
+//
+function evenNumbers(array, number) {
+  let result = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 == 0) {
+      result.push(array[i]);
+    }
+  }
+  return result.splice(result.length - number, number);
+}
+console.log(evenNumbers([6, -25, 3, 7, 5, 5, 7, -3, 23], 1));
