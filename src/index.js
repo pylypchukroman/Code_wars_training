@@ -1134,4 +1134,19 @@ function evenNumbers(array, number) {
   }
   return result.splice(result.length - number, number);
 }
-console.log(evenNumbers([6, -25, 3, 7, 5, 5, 7, -3, 23], 1));
+// console.log(evenNumbers([6, -25, 3, 7, 5, 5, 7, -3, 23], 1));
+//
+function stringMerge(string1, string2, letter) {
+  const firstNum = string1.indexOf(letter);
+  const secondNum = string2.indexOf(letter);
+  return string1.slice(0, firstNum + 1) + string2.slice(secondNum + 1);
+}
+// console.log(stringMerge('coding', 'anywhere', 'n'));
+//
+function swap(str) {
+  return str
+    .split('')
+    .map(letter => (letter == letter.toLowerCase() ? letter.toUpperCase() : letter.toLowerCase()))
+    .join('');
+}
+// console.log(swap('CodeWars'));
