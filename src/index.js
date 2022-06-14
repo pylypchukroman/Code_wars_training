@@ -1156,3 +1156,94 @@ function getMiddle(s) {
   return s.length % 2 == 0 ? s[mid - 1] + s[mid] : s[mid];
 }
 // console.log(getMiddle('test'));
+//
+function maskify(cc) {
+  return cc.length < 4 ? cc : '#'.repeat(cc.length - 4) + cc.slice(cc.length - 4);
+}
+// console.log(maskify('11111'));
+//
+function stray(numbers) {
+  let result;
+  const duplicate = numbers.filter((num, index, array) => array.indexOf(num) != index);
+  for (let i = 0; i < numbers.length; i++) {
+    if (duplicate.includes(numbers[i])) {
+      continue;
+    }
+    result = numbers[i];
+  }
+  return result;
+}
+// console.log(stray([17, 17, 3, 17, 17, 17, 17]));
+//
+function checkExam(array1, array2) {
+  let result = 0;
+  for (let i = 0; i < array1.length; i++) {
+    if (array1[i] == array2[i]) {
+      result += 4;
+    } else if (array2[i] === '') {
+      result += 0;
+    } else {
+      result -= 1;
+    }
+  }
+  return result < 0 ? 0 : result;
+}
+// console.log(checkExam(['a', 'a', 'b', 'c'], ['a', 'a', 'b', 'c']));
+//
+function findSenior(list) {
+  let hAge = 0;
+  let seniors = [];
+  for (let i = 0; i < list.length; i++) {
+    if (list[i].age > hAge) {
+      hAge = list[i].age;
+    }
+  }
+  for (let j = 0; j < list.length; j++) {
+    if (list[j].age == hAge) {
+      seniors.push(list[j]);
+    }
+  }
+  return seniors;
+}
+// console.log(
+//   findSenior([
+//     {
+//       firstName: 'Gabriel',
+//       lastName: 'X.',
+//       country: 'Monaco',
+//       continent: 'Europe',
+//       age: 49,
+//       language: 'PHP',
+//     },
+//     {
+//       firstName: 'Odval',
+//       lastName: 'F.',
+//       country: 'Mongolia',
+//       continent: 'Asia',
+//       age: 38,
+//       language: 'Python',
+//     },
+//     {
+//       firstName: 'Emilija',
+//       lastName: 'S.',
+//       country: 'Lithuania',
+//       continent: 'Europe',
+//       age: 19,
+//       language: 'Python',
+//     },
+//     {
+//       firstName: 'Sou',
+//       lastName: 'B.',
+//       country: 'Japan',
+//       continent: 'Asia',
+//       age: 49,
+//       language: 'PHP',
+//     },
+//   ]),
+// );
+//
+const sortme = function (names) {
+  return [...names].sort((a, b) => a[0].toLowerCase().localeCompare(b[0].toLowerCase()));
+};
+// console.log(sortme(['Hello', 'there', "I'm", 'fine']));
+//
