@@ -1247,3 +1247,76 @@ const sortme = function (names) {
 };
 // console.log(sortme(['Hello', 'there', "I'm", 'fine']));
 //
+function solution(number) {
+  let i = 0;
+  let result = [];
+  while (i < number - 1) {
+    i++;
+    if (i % 3 == 0 || i % 5 == 0) {
+      result.push(i);
+    }
+  }
+  return result.reduce((num, acc) => (acc += num)) < 0
+    ? 0
+    : result.reduce((num, acc) => (acc += num));
+}
+// console.log(solution(20));
+///
+function solution(string) {
+  const arrStr = string.split('');
+  let result = [];
+  for (let i = 0; i < arrStr.length; i++) {
+    if (arrStr[i] == arrStr[i].toUpperCase()) {
+      result.push('.' + arrStr[i]);
+    } else {
+      result.push(arrStr[i]);
+    }
+  }
+  return result.join('').split('.').join(' ');
+}
+// console.log(solution('camelCasingTest'));
+//
+function toWeirdCase(string) {
+  return string
+    .split(' ')
+    .map(s => [...s].map((e, i) => (i % 2 ? e.toLowerCase() : e.toUpperCase())).join``)
+    .join(' ');
+}
+// console.log(toWeirdCase('This is a test'));
+//
+function findOdd(A) {
+  const result = {};
+  A.forEach(num => (result[num] = result[num] ? result[num] + 1 : 1));
+  return +Object.keys(result).find(key => result[key] % 2 === 1);
+}
+// console.log(findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]));
+//
+function cleanString(s) {
+  let result = [];
+  [...s].map(char => (char === '#' ? result.pop() : result.push(char)));
+  return result.join('');
+}
+// console.log(cleanString('abc#d##c'));
+//
+function digital_root(n) {
+  let result = 0;
+  n.toString()
+    .split('')
+    .map(n => {
+      result += Number(n);
+    });
+  return result > 9 ? digital_root(result) : result;
+}
+// console.log(digital_root(132189));
+//
+function duplicateCount(text) {
+  let result = {};
+  let counter = 0;
+  text
+    .toLowerCase()
+    .split('')
+    .forEach(el => (result[el] = result[el] ? result[el] + 1 : 1));
+  Object.values(result).forEach(num => (num > 1 ? counter++ : null));
+  return counter;
+}
+// console.log(duplicateCount('Indivisibility'));
