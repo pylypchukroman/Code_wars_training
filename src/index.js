@@ -1320,3 +1320,53 @@ function duplicateCount(text) {
   return counter;
 }
 // console.log(duplicateCount('Indivisibility'));
+//
+function getLengthOfMissingArray(arrayOfArrays) {
+  const l = (arrayOfArrays || []).map(a => (a ? a.length : 0)).sort((a, b) => a - b);
+  if (l.includes(0)) {
+    return 0;
+  }
+
+  for (let i = 0; i < l.length - 1; i++) {
+    if (l[i] + 1 !== l[i + 1]) {
+      return l[i] + 1;
+    }
+  }
+
+  return 0;
+}
+// console.log(getLengthOfMissingArray([[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]]));
+//
+function evensAndOdds(num) {
+  if (num % 2 == 0) {
+    return num.toString(2);
+  }
+  return num.toString(16);
+}
+// console.log(evensAndOdds(13));
+//
+function spongeMeme(sentence) {
+  return sentence
+    .split('')
+    .map((el, i) => (i % 2 == 0 ? el.toUpperCase() : el.toLowerCase()))
+    .join('');
+}
+// console.log(spongeMeme('stop Making spongebob Memes!'));
+//
+var number = function (array) {
+  let result = [];
+  array.forEach((el, i) => result.push(`${i + 1}: ${el}`));
+  return result;
+};
+// console.log(number([]));
+//
+function alternate(n, firstValue, secondValue) {
+  let i = 0;
+  let result = [];
+  while (i < n) {
+    i++;
+    i % 2 == 0 ? result.push(secondValue) : result.push(firstValue);
+  }
+  return result;
+}
+// console.log(alternate(5, true, false));
