@@ -1370,3 +1370,89 @@ function alternate(n, firstValue, secondValue) {
   return result;
 }
 // console.log(alternate(5, true, false));
+//
+function triangular(n) {
+  return n > 0 ? (n * (n + 1)) / 2 : 0;
+}
+// console.log(triangular(4));
+//
+function solve(arr) {
+  let obj = {};
+  arr.forEach(num => (obj[num] = obj[num] ? obj[num] + 1 : 1));
+  return [...arr].sort((a, b) => obj[b] - obj[a] || a - b);
+}
+// console.log(solve([1, 2, 3, 0, 5, 0, 1, 6, 8, 8, 6, 9, 1]));
+function arrAdder(arr) {
+  let result = '';
+  for (let i = 0; i < arr[0].length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[j][i]) {
+        result = result + arr[j][i];
+      }
+    }
+    result += ' ';
+  }
+  return result.trim();
+}
+// console.log(
+//   arrAdder([
+//     ['J', 'L', 'L', 'M'],
+//     ['u', 'i', 'i', 'a'],
+//     ['s', 'v', 'f', 'n'],
+//     ['t', 'e', 'e', ''],
+//   ]),
+// );
+//
+function lovefunc(flower1, flower2) {
+  return (flower1 % 2 == 0 && flower2 % 2 != 0) || (flower2 % 2 == 0 && flower1 % 2 != 0);
+}
+// console.log(lovefunc(0, 0));
+//
+function sayHello(name, city, state) {
+  return `Hello, ${name.map(el => el).join(' ')}! Welcome to ${city}, ${state}!`;
+}
+// console.log(sayHello(['Franklin', 'Delano', 'Roosevelt'], 'Chicago', 'Illinois'));
+//
+function countLanguages(list) {
+  let result = {};
+  list.forEach(
+    dev => (result[dev.language] = result[dev.language] ? (result[dev.language] += 1) : 1),
+  );
+  return result;
+}
+console.log(
+  countLanguages([
+    {
+      firstName: 'Noah',
+      lastName: 'M.',
+      country: 'Switzerland',
+      continent: 'Europe',
+      age: 19,
+      language: 'C',
+    },
+    {
+      firstName: 'Anna',
+      lastName: 'R.',
+      country: 'Liechtenstein',
+      continent: 'Europe',
+      age: 52,
+      language: 'JavaScript',
+    },
+    {
+      firstName: 'Ramon',
+      lastName: 'R.',
+      country: 'Paraguay',
+      continent: 'Americas',
+      age: 29,
+      language: 'Ruby',
+    },
+    {
+      firstName: 'George',
+      lastName: 'B.',
+      country: 'England',
+      continent: 'Europe',
+      age: 81,
+      language: 'C',
+    },
+  ]),
+);
