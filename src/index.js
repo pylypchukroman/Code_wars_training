@@ -1420,39 +1420,230 @@ function countLanguages(list) {
   );
   return result;
 }
-console.log(
-  countLanguages([
-    {
-      firstName: 'Noah',
-      lastName: 'M.',
-      country: 'Switzerland',
-      continent: 'Europe',
-      age: 19,
-      language: 'C',
-    },
-    {
-      firstName: 'Anna',
-      lastName: 'R.',
-      country: 'Liechtenstein',
-      continent: 'Europe',
-      age: 52,
-      language: 'JavaScript',
-    },
-    {
-      firstName: 'Ramon',
-      lastName: 'R.',
-      country: 'Paraguay',
-      continent: 'Americas',
-      age: 29,
-      language: 'Ruby',
-    },
-    {
-      firstName: 'George',
-      lastName: 'B.',
-      country: 'England',
-      continent: 'Europe',
-      age: 81,
-      language: 'C',
-    },
-  ]),
-);
+// console.log(
+//   countLanguages([
+//     {
+//       firstName: 'Noah',
+//       lastName: 'M.',
+//       country: 'Switzerland',
+//       continent: 'Europe',
+//       age: 19,
+//       language: 'C',
+//     },
+//     {
+//       firstName: 'Anna',
+//       lastName: 'R.',
+//       country: 'Liechtenstein',
+//       continent: 'Europe',
+//       age: 52,
+//       language: 'JavaScript',
+//     },
+//     {
+//       firstName: 'Ramon',
+//       lastName: 'R.',
+//       country: 'Paraguay',
+//       continent: 'Americas',
+//       age: 29,
+//       language: 'Ruby',
+//     },
+//     {
+//       firstName: 'George',
+//       lastName: 'B.',
+//       country: 'England',
+//       continent: 'Europe',
+//       age: 81,
+//       language: 'C',
+//     },
+//   ]),
+// );
+//
+var countBits = function (n) {
+  return n
+    .toString(2)
+    .split('')
+    .map(num => +num)
+    .reduce((el, acc) => (acc += el));
+};
+// console.log(countBits(1234));
+//
+function narcissistic(value) {
+  const n = value.toString().split('').length;
+  const result = value
+    .toString()
+    .split('')
+    .map(num => Math.pow(num, n))
+    .reduce((num, acc) => (acc += num));
+  console.log(n);
+  console.log(result);
+  return result == n ? true : false;
+}
+// console.log(narcissistic(153));
+//
+function spinWords(string) {
+  let result = [];
+  string
+    .split(' ')
+    .forEach(el =>
+      el.length >= 5 ? result.push(el.split('').reverse().join('')) : result.push(el),
+    );
+  return result.join(' ');
+}
+// console.log(spinWords('Hey fellow warriors'));
+//
+function findOutlier(integers) {
+  let odd = [];
+  let even = [];
+  integers.forEach(num => (num % 2 == 0 ? even.push(num) : odd.push(num)));
+  return odd.length > even.length ? Number(even.join('')) : Number(odd.join(''));
+}
+// console.log(findOutlier([2, 6, 8, 10, 3]));
+//
+function sortArray(array) {
+  const odd = array.filter(num => num % 2).sort((a, b) => a - b);
+  return array.map(num => (num % 2 ? odd.shift() : num));
+}
+// console.log(sortArray([5, 3, 2, 8, 1, 4]));
+//
+function deepCount(a) {
+  return a.reduce((acc, val) => {
+    return acc + (Array.isArray(val) ? deepCount(val) : 0);
+  }, a.length);
+}
+// console.log(deepCount([[[[[[[[]]]]]]]]));
+//
+function dup(s) {
+  const initail = [];
+  const result = [];
+
+  s.map(el => {
+    el.split('').reduce((acc, value, index, arr) => {
+      if (arr[index] !== arr[index + 1]) {
+        initail.push(arr[index]);
+      }
+
+      if (index === arr.length - 1) {
+        result.push(initail.join(''));
+        initail.length = 0;
+      }
+    }, 0);
+  });
+
+  return result;
+}
+// console.log(dup(['kelless', 'keenness']));
+//
+var numberFormat = function (n) {
+  return n.toLocaleString();
+};
+// console.log(numberFormat(100000));
+//
+function squareSum(numbers) {
+  return numbers.map(num => Math.pow(num, 2)).reduce((el, acc) => (acc += el));
+}
+// console.log(squareSum([0, 3, 4, 5]));
+//
+function doubleChar(str) {
+  let result = [];
+  const arr = str.split('');
+  for (let i = 0; i < arr.length; i++) {
+    result.push(arr[i].repeat(2));
+  }
+  return result.join('');
+}
+// console.log(doubleChar('String'));
+function addBinary(a, b) {
+  const result = a + b;
+  return result.toString(2);
+}
+// console.log(addBinary(1, 2));
+//
+function fakeBin(x) {
+  let result = [];
+  x.split('').forEach(el => (+el >= 5 ? result.push(1) : result.push(0)));
+  return result.join('');
+}
+// console.log(fakeBin('45385593107843568'));
+//
+function wordToBin(str) {
+  return str.split('').map(el => 0 + el.charCodeAt(0).toString(2));
+}
+// console.log(wordToBin('man'));
+const er = 1;
+// console.log(er.toString(2));
+//
+function moveZeros(arr) {
+  let finish = [];
+  let start = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 0) {
+      finish.push(arr[i]);
+    } else {
+      start.push(arr[i]);
+    }
+  }
+  return start.concat(finish);
+}
+// console.log(moveZeros([false, 1, 0, 1, 2, 0, 1, 3, 'a']));
+//
+function validParentheses(parens) {
+  let r = 0;
+  let l = 0;
+
+  parens.split('').forEach(el => (el == '(' ? r++ : l++));
+  return r == l;
+}
+// console.log(validParentheses('())('));
+//
+const binaryArrayToNumber = arr => {
+  return parseInt(arr.join(''), 2);
+};
+// console.log(binaryArrayToNumber([0, 1, 1, 0]));
+//
+function generateHashtag(str) {
+  if (str.length == 0 || str.trim() == '') {
+    return false;
+  }
+  const result = str
+    .split(' ')
+    .map(el => el.charAt(0).toUpperCase() + el.slice(1))
+    .join('');
+  return result.length > 140 ? 0 : `#${result}`;
+}
+// console.log(generateHashtag('           '));
+function toUnderscore(string) {
+  let result = '';
+  if (string.length > 1) {
+    for (let i = 0; i < string.length; i++) {
+      if (string[i] >= '0' && string[i] < '9') {
+        result += string[i].toString();
+      } else if (string[i] === string[i].toUpperCase()) {
+        result += '_';
+        result += string[i].toLowerCase();
+      } else {
+        result += string[i];
+      }
+    }
+    return result.substring(1);
+  }
+  return string.toString();
+}
+// console.log(toUnderscore('7'));
+//
+function reverseLetter(str) {
+  return str
+    .replace(/[^a-zA-Z]/g, '')
+    .split('')
+    .reverse()
+    .join('');
+}
+// console.log(reverseLetter('ultr53o?n'));
+//
+function largestPairSum(numbers) {
+  return numbers.sort((a, b) => b - a)[0] + numbers.sort((a, b) => b - a)[1];
+}
+// console.log(largestPairSum([-100, -29, -24, -19, 19]));
+//
+function getSum(a, b) {
+  return a == b ? a : a + b;
+}
+// console.log(getSum(107, -409));
