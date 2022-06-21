@@ -1657,4 +1657,21 @@ function sevenAte9(str) {
   }
   return arr.join('');
 }
-console.log(sevenAte9('7979797'));
+// console.log(sevenAte9('7979797'));
+//
+const arrCheck = value => {
+  const filltered = value.filter(el => Array.isArray(el));
+  return value.length == filltered.length;
+};
+// console.log(arrCheck([]));
+//
+function scoreOfDive(scores, tariff) {
+  return (
+    scores
+      .sort((a, b) => a - b)
+      .slice(2)
+      .slice(0, -2)
+      .reduce((el, acc) => (acc += el)) * tariff
+  ).toFixed(2);
+}
+// console.log(scoreOfDive([7, 7.5, 8, 7.5, 6, 7, 7], 3));
