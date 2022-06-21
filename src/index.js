@@ -1675,3 +1675,54 @@ function scoreOfDive(scores, tariff) {
   ).toFixed(2);
 }
 // console.log(scoreOfDive([7, 7.5, 8, 7.5, 6, 7, 7], 3));
+//
+function DNAStrand(dna) {
+  let result = [];
+  const arr = dna.split('');
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 'A') {
+      result.push('T');
+    } else if (arr[i] === 'T') {
+      result.push('A');
+    } else if (arr[i] === 'C') {
+      result.push('G');
+    } else if (arr[i] === 'G') {
+      result.push('C');
+    }
+  }
+  return result.join('');
+}
+// console.log(DNAStrand('ATTGC'));
+//
+function boolToWord(bool) {
+  return bool == true ? 'Yes' : 'No';
+}
+// console.log(boolToWord(true));
+//
+function noOdds(values) {
+  return values.filter(num => num % 2 == 0);
+}
+// console.log(noOdds([0, 1, 2, 3]));
+//
+function solve(s) {
+  let LCL = [];
+  let UCL = [];
+
+  s.split('').forEach(el => (el == el.toUpperCase() ? UCL.push(el) : LCL.push(el)));
+  if (LCL.length == UCL.length) {
+    return s.toLowerCase();
+  }
+  return LCL.length > UCL.length ? s.toLowerCase() : s.toUpperCase();
+}
+// console.log(solve('COde'));
+//
+function minValue(values) {
+  return [...new Set(values)].sort((a, b) => a - b).join('');
+}
+// console.log(minValue([4, 7, 5, 7]));
+//
+var greet = function (name) {
+  const regex = /[a-z]/g;
+  return `Hello ${name[0].toUpperCase()}${name.slice(1).toLowerCase()}!`;
+};
+// console.log(greet('riley'));
