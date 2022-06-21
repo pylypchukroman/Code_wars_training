@@ -1647,3 +1647,14 @@ function getSum(a, b) {
   return a == b ? a : a + b;
 }
 // console.log(getSum(107, -409));
+//
+function sevenAte9(str) {
+  const arr = str.split('');
+  for (let i = 1; i < arr.length - 1; i++) {
+    if (arr[i - 1] === '7' && arr[i] === '9' && arr[i + 1] === '7') {
+      arr.splice(i, 1);
+    }
+  }
+  return arr.join('');
+}
+console.log(sevenAte9('7979797'));
