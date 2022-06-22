@@ -1763,3 +1763,21 @@ var isPalindrome2 = function (s) {
   );
 };
 // console.log(isPalindrome2('1b1'));
+//
+const fibonacci = n => {
+  // if (n <= 1) {
+  //   return n;
+  // }
+  // return fibonacci(n - 1) + fibonacci(n - 2);
+  let a = 0,
+    b = 1,
+    c = n;
+
+  for (let i = 2; i <= n; i++) {
+    c = a + b;
+    a = b;
+    b = c;
+  }
+  return c;
+};
+// console.log(fibonacci(4));
