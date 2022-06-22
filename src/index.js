@@ -1726,3 +1726,28 @@ var greet = function (name) {
   return `Hello ${name[0].toUpperCase()}${name.slice(1).toLowerCase()}!`;
 };
 // console.log(greet('riley'));
+//
+function isVeryEvenNumber(n) {
+  const arr = n.toString().split('');
+  let acc = 0;
+  for (let i = 0; i < arr.length; i++) {
+    acc += Number(arr[i]);
+  }
+  const result = acc >= 10 ? isVeryEvenNumber(acc) : acc;
+  return result % 2 === 0;
+}
+// console.log(isVeryEvenNumber(1234));
+//
+function singleDigit(n) {
+  if (n < 10) {
+    return n;
+  }
+  let result = n
+    .toString(2)
+    .split('')
+    .map(num => +num)
+    .reduce((acc, value) => (acc += value));
+  return result >= 10 ? singleDigit(result) : result;
+}
+// console.log(singleDigit(5));
+//
