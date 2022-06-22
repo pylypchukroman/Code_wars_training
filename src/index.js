@@ -1751,3 +1751,15 @@ function singleDigit(n) {
 }
 // console.log(singleDigit(5));
 //
+var isPalindrome2 = function (s) {
+  return (
+    s.toLowerCase().replace(/[^0-9a-z]/gi, '') ==
+    s
+      .toLowerCase()
+      .replace(/[^a-z0-9]/g, '')
+      .split('')
+      .reverse()
+      .join('')
+  );
+};
+// console.log(isPalindrome2('1b1'));
