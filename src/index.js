@@ -1781,17 +1781,8 @@ const fibonacci = n => {
   // return c;
 };
 // console.log(fibonacci(10));
-const fastFibonacci = number => {
-  if (number == 0) return [0n, 1n];
-
-  const [a, b] = fastFibonacci(number / 2n);
-  const c = a * (b * 2n - a);
-  const d = a * a + b * b;
-
-  return number % 2n ? [d, c + d] : [c, d];
-};
 //
 var deleteDuplicates = function (head) {
   return [...new Set(head)].sort((a, b) => a - b);
 };
-console.log(deleteDuplicates([1, 1, 2, 3, 3]));
+// console.log(deleteDuplicates([1, 1, 2, 3, 3]));
