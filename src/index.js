@@ -1786,3 +1786,13 @@ var deleteDuplicates = function (head) {
   return [...new Set(head)].sort((a, b) => a - b);
 };
 // console.log(deleteDuplicates([1, 1, 2, 3, 3]));
+//
+function hammingWeight(x) {
+  return x
+    .toString(2)
+    .split('')
+    .map(el => +el)
+    .reduce((acc, el) => (acc += el === 1 ? el : null));
+}
+// console.log(hammingWeight(21));
+//
