@@ -1796,3 +1796,26 @@ function hammingWeight(x) {
 }
 // console.log(hammingWeight(21));
 //
+function strong(n) {
+  let factorial = [];
+  const arr = n
+    .toString()
+    .split('')
+    .map(num => +num);
+  for (let i = 0; i < arr.length; i++) {
+    function getFact(number) {
+      let fact = 1;
+      for (var i = 1; i <= number; i++) {
+        fact = fact * i;
+      }
+      return fact;
+    }
+    factorial.push(getFact(arr[i]));
+  }
+  return factorial.reduce((acc, el) => (acc += el)) === n ? 'STRONG!!!!' : 'Not Strong !!';
+}
+// console.log(strong(145));
+function redistributeWealth(wealth) {
+  return wealth.fill(wealth.reduce((acc, el) => (acc += el)) / wealth.length);
+}
+// console.log(redistributeWealth([5, 10, 6]));
