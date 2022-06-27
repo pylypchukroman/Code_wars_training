@@ -1851,4 +1851,4 @@ function catMouse(x) {
 function clean(arr) {
   return arr.filter(el => true);
 }
-console.log(clean([1, 2, , , 3, 4]));
+// console.log(clean([1, 2, , , 3, 4]));
