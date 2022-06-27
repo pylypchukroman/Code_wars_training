@@ -1839,3 +1839,16 @@ function myLanguages(results) {
   return result;
 }
 // console.log(myLanguages({ Hindi: 60, Greek: 71, Dutch: 93 }));
+//
+// const aar = [2, 9, 13, 10, 5, 2, 9, 5];
+// console.log(aar.at(-3));
+//
+function catMouse(x) {
+  return x.split('').length > 5 ? 'Escaped!' : 'Caught!';
+}
+// console.log(catMouse('C...m'));
+//
+function clean(arr) {
+  return arr.filter(el => true);
+}
+console.log(clean([1, 2, , , 3, 4]));
