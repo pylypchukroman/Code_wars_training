@@ -1819,3 +1819,23 @@ function redistributeWealth(wealth) {
   return wealth.fill(wealth.reduce((acc, el) => (acc += el)) / wealth.length);
 }
 // console.log(redistributeWealth([5, 10, 6]));
+//
+function noSpace(x) {
+  return x.replaceAll(' ', '');
+}
+// console.log(noSpace('sdfndsf sfs    sfdsf  fs fdsfs fd     sfsdds'));
+//
+function maxTriSum(numbers) {
+  return [...new Set(numbers)]
+    .sort((a, b) => a - b)
+    .splice([...new Set(numbers)].length - 3, 3)
+    .reduce((acc, num) => (acc += num));
+}
+// console.log(maxTriSum([2, 9, 13, 10, 5, 2, 9, 5]));
+//
+function myLanguages(results) {
+  let result = [];
+  Object.entries(results).forEach(el => (el[1] >= 60 ? result.push(el[0]) : null));
+  return result;
+}
+// console.log(myLanguages({ Hindi: 60, Greek: 71, Dutch: 93 }));
