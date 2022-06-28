@@ -1852,3 +1852,11 @@ function clean(arr) {
   return arr.filter(el => true);
 }
 // console.log(clean([1, 2, , , 3, 4]));
+//
+function makeArr(min, max) {
+  let array = [];
+  while (min < max + 1) array.push(min), (min = min + 1);
+  return array;
+}
+// console.log(makeArr(12, 18));
+//
