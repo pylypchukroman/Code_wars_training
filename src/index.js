@@ -1860,3 +1860,35 @@ function makeArr(min, max) {
 }
 // console.log(makeArr(12, 18));
 //
+function getEvenNumbers(start, end) {
+  const newArr = [];
+  // const firstEvenNum = start % 2 == 0 ? start : start + 1;
+
+  for (let i = start % 2 == 0 ? start : start + 1; i <= end; i += 2) {
+    newArr.push(i);
+  }
+  return newArr;
+}
+// console.log(getEvenNumbers(3, 10));
+//
+function summy(stringOfInts) {
+  return stringOfInts
+    .split(' ')
+    .map(el => +el)
+    .reduce((acc, num) => (acc += num));
+}
+// console.log(summy('1 2 3 4 5'));
+//
+// not workikg|
+const palindromeChainLength = function (n) {
+  let step = 1;
+  let reverse = +n.toString().split('').reverse().join('');
+  let sum = n + reverse;
+  let reverseSum = +sum.toString().split('').reverse().join('');
+  while (sum != reverseSum) {
+    return (step = 1 + palindromeChainLength(sum));
+  }
+  return step;
+};
+// console.log(palindromeChainLength(88));
+// not workikg|
