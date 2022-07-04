@@ -1892,3 +1892,12 @@ const palindromeChainLength = function (n) {
 };
 // console.log(palindromeChainLength(88));
 // not workikg|
+//
+function sortMyString(S) {
+  let odd = [];
+  let even = [];
+  const arr = S.split('');
+  arr.forEach((el, i) => (i % 2 == 0 ? odd.push(arr[i]) : even.push(arr[i])));
+  return `${odd.join('')} ${even.join('')}`;
+}
+console.log(sortMyString('CodeWars'));
