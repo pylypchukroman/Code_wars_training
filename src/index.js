@@ -1906,3 +1906,23 @@ const closestMultiple10 = num => {
   return Math.round(num / 10) * 10;
 };
 // console.log(closestMultiple10(37));
+//
+var number = function (busStops) {
+  return (
+    busStops.map(el => el[0]).reduce((acc, num) => (acc += num)) -
+    busStops.map(el => el[1]).reduce((acc, num) => (acc += num))
+  );
+};
+// console.log(
+//   number([
+//     [10, 0],
+//     [3, 5],
+//     [5, 8],
+//   ]),
+// );
+//
+String.prototype.isUpperCase = function (str) {
+  return str === str.toUpperCase() ? true : false;
+};
+// console.log(String.prototype.isUpperCase('Bob walks his dog every day.'));
+//
