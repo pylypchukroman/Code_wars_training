@@ -1900,4 +1900,9 @@ function sortMyString(S) {
   arr.forEach((el, i) => (i % 2 == 0 ? odd.push(arr[i]) : even.push(arr[i])));
   return `${odd.join('')} ${even.join('')}`;
 }
-console.log(sortMyString('CodeWars'));
+// console.log(sortMyString('CodeWars'));
+//
+const closestMultiple10 = num => {
+  return Math.round(num / 10) * 10;
+};
+// console.log(closestMultiple10(37));
