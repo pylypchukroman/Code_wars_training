@@ -1926,3 +1926,18 @@ String.prototype.isUpperCase = function (str) {
 };
 // console.log(String.prototype.isUpperCase('Bob walks his dog every day.'));
 //
+function dotCalculator(equation) {
+  const x = equation.replaceAll('.', '');
+  let result = 0;
+  return x == '+' ? equation.split('+').reduce((acc, el) => (acc += el.length)) : null;
+}
+// console.log(dotCalculator('..... + ...............'));
+function median(array) {
+  if (array.length % 2 != 0) {
+    return array.sort((a, b) => a - b)[Math.floor(array.length / 2)];
+  }
+  const middle = array.sort((a, b) => a - b)[Math.floor(array.length / 2)];
+  const prevMiddle = array.sort((a, b) => a - b)[Math.floor(array.length / 2) - 1];
+  return (middle + prevMiddle) / 2;
+}
+// console.log(median([33, 99, 100, 30, 29, 50]));
