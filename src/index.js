@@ -1958,21 +1958,37 @@ function outed(meet, boss) {
     ? 'Get Out Now!'
     : 'Nice Work Champ!';
 }
-// console.log(
-//   outed(
-//     {
-//       tim: 0,
-//       jim: 5,
-//       randy: 6,
-//       sandy: 7,
-//       andy: 8,
-//       katie: 9,
-//       laura: 7,
-//       saajid: 9,
-//       alex: 0,
-//       john: 6,
-//       mr: 1,
-//     },
-//     'mr',
-//   ),
-// );
+//
+//
+function explode(s) {
+  let result = [];
+  const arr = s.split('');
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == 0) {
+      continue;
+    }
+    result.push(arr[i].repeat(arr[i]));
+  }
+  return result.join('');
+}
+// console.log(explode('102269'));
+function palindrome(num) {
+  if (typeof num != 'number' || num < 0) {
+    return 'Not valid';
+  }
+
+  return num == num.toString().split('').reverse().join('');
+}
+// console.log(palindrome(-450));
+//
+function shorter_reverse_longer(a, b) {
+  if (a.length == b.length) {
+    return `${b}${a.split('').reverse().join('')}${b}`;
+  }
+  return `${[a, b].sort((a, b) => a.length - b.length)[0]}${[a, b]
+    .sort((a, b) => a.length - b.length)[1]
+    .split('')
+    .reverse()
+    .join('')}${[a, b].sort((a, b) => a.length - b.length)[0]}`;
+}
+// console.log(shorter_reverse_longer('first', 'abcde'));
