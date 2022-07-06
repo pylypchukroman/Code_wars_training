@@ -1941,3 +1941,38 @@ function median(array) {
   return (middle + prevMiddle) / 2;
 }
 // console.log(median([33, 99, 100, 30, 29, 50]));
+//
+function outed(meet, boss) {
+  let result = [];
+  const arr = Object.entries(meet);
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i][0] === boss) {
+      result.push(arr[i][1] * 2);
+      continue;
+    }
+    result.push(arr[i][1]);
+  }
+  console.log(result);
+  console.log(result.reduce((acc, el) => (acc += el)) / result.length);
+  return result.reduce((acc, el) => (acc += el)) / result.length <= 5
+    ? 'Get Out Now!'
+    : 'Nice Work Champ!';
+}
+// console.log(
+//   outed(
+//     {
+//       tim: 0,
+//       jim: 5,
+//       randy: 6,
+//       sandy: 7,
+//       andy: 8,
+//       katie: 9,
+//       laura: 7,
+//       saajid: 9,
+//       alex: 0,
+//       john: 6,
+//       mr: 1,
+//     },
+//     'mr',
+//   ),
+// );
