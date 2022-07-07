@@ -1992,3 +1992,41 @@ function shorter_reverse_longer(a, b) {
     .join('')}${[a, b].sort((a, b) => a.length - b.length)[0]}`;
 }
 // console.log(shorter_reverse_longer('first', 'abcde'));
+//
+var removeElement = function (nums, val) {
+  return nums
+    .join('')
+    .replaceAll(val.toString(), '')
+    .split('')
+    .map(el => +el);
+};
+// console.log(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2));
+//
+function persistence(num) {
+  let step = 1;
+  if (num <= 9) {
+    return 0;
+  } else {
+    let result = num
+      .toString()
+      .split('')
+      .map(el => +el)
+      .reduce((acc, el) => (acc *= el));
+    if (result > 9) {
+      step = 1 + persistence(result);
+    }
+    return step;
+  }
+}
+// console.log(persistence(39));
+//
+function solution(str) {
+  return str.length < 1 ? [] : str.match(/.{1,2}/g).map(el => (el.length >= 2 ? el : el + '_'));
+}
+// console.log(solution(''));
+//
+function moveZero(num) {
+  return num.filter(item => item !== 0).concat(num.filter(item => item === 0));
+}
+// console.log(moveZero([1, 2, 4, 0, 8, 0, 12, 0, 8, 0, 0, 11, 23]));
+//
