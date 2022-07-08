@@ -2030,3 +2030,10 @@ function moveZero(num) {
 }
 // console.log(moveZero([1, 2, 4, 0, 8, 0, 12, 0, 8, 0, 0, 11, 23]));
 //
+function as(str) {
+  return str
+    .split(' ')
+    .map(el => el.at(0).toUpperCase() + el.slice(1))
+    .join('');
+}
+// console.log(as('code wars'));
