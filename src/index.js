@@ -2046,4 +2046,4 @@ function divCon(x) {
     .reduce((acc, num) => (acc += num));
   return numbers - noNumbers;
 }
-console.log(divCon(['3', 6, 6, 0, '5', 8, 5, '6', 2, '0']));
+// console.log(divCon(['3', 6, 6, 0, '5', 8, 5, '6', 2, '0']));
