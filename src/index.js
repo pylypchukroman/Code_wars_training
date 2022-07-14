@@ -2037,3 +2037,13 @@ function as(str) {
     .join('');
 }
 // console.log(as('code wars'));
+//
+function divCon(x) {
+  const numbers = x.filter(el => typeof el === 'number').reduce((acc, num) => (acc += num));
+  const noNumbers = x
+    .filter(el => typeof el === 'string')
+    .map(num => +num)
+    .reduce((acc, num) => (acc += num));
+  return numbers - noNumbers;
+}
+console.log(divCon(['3', 6, 6, 0, '5', 8, 5, '6', 2, '0']));
