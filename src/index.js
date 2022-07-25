@@ -2047,3 +2047,9 @@ function divCon(x) {
   return numbers - noNumbers;
 }
 // console.log(divCon(['3', 6, 6, 0, '5', 8, 5, '6', 2, '0']));
+function getNumm(nums) {
+  let result = {};
+  nums.forEach(num => (result[num] = result[num] ? (result[num] += 1) : 1));
+  return nums.sort((a, b) => (result[a] === result[b] ? a - b : result[a] - result[b]));
+}
+console.log(getNumm([1, 3, 4, 6, 1, 4, 4, 4, 4, 7, 7, 7, 7, 7, 7, 7, 7, 1, 5, 5, 5, 5, 5, 5]));
