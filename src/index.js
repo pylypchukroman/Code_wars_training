@@ -2054,3 +2054,10 @@ function getNumm(nums) {
 }
 // console.log(getNumm([1, 3, 4, 6, 1, 4, 4, 4, 4, 7, 7, 7, 7, 7, 7, 7, 7, 1, 5, 5, 5, 5, 5, 5]));
 //
+function makeCamelCase(str) {
+  return str
+    .split('')
+    .map((char, i) => (i % 2 == 0 ? char.toUpperCase() : char.toLowerCase()))
+    .join('');
+}
+// console.log(makeCamelCase('string'));
