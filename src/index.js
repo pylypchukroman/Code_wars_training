@@ -2061,3 +2061,12 @@ function makeCamelCase(str) {
     .join('');
 }
 // console.log(makeCamelCase('string'));
+function orderedCount(str) {
+  let result = {};
+  str
+    .replaceAll(' ', '')
+    .split('')
+    .forEach(el => (result[el] = result[el] ? result[el] + 1 : 1));
+  return Object.entries(result);
+}
+console.log(orderedCount('Code wars'));
