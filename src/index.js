@@ -2069,4 +2069,33 @@ function orderedCount(str) {
     .forEach(el => (result[el] = result[el] ? result[el] + 1 : 1));
   return Object.entries(result);
 }
-console.log(orderedCount('Code wars'));
+// console.log(orderedCount('Code wars'));
+//
+function scrollingText(str) {
+  let result = [str];
+  let indexCurrent = 0;
+
+  function movingItem(str) {
+    const strArr = str.split('');
+    const firstLetter = strArr[0];
+    let newWord = strArr.splice(1).join('') + firstLetter;
+    result.push(newWord);
+  }
+  movingItem(str);
+
+  while (indexCurrent < str.length - 2) {
+    movingItem(result[indexCurrent + 1]);
+    indexCurrent++;
+  }
+
+  return result.map(el => el.toUpperCase());
+}
+
+// console.log(scrollingText('robot'));
+//
+function scrollingText(text) {
+  text = text.toUpperCase();
+
+  return [...text].map((_, i) => text.slice(i) + text.slice(0, i));
+}
+console.log(scrollingText('robot'));
