@@ -2098,4 +2098,21 @@ function scrollingText(text) {
 
   return [...text].map((_, i) => text.slice(i) + text.slice(0, i));
 }
-console.log(scrollingText('robot'));
+// console.log(scrollingText('robot'));
+//
+function compareTwoArr(arr1, arr2) {
+  return Math.max(...arr1.map(obj => obj.test)) == Math.max(...arr2.map(obj => obj.test))
+    ? 'draw'
+    : Math.max(...arr1.map(obj => obj.test)) > Math.max(...arr2.map(obj => obj.test))
+    ? 'arr1 win'
+    : 'arr2 win';
+}
+// console.log(
+//   compareTwoArr(
+//     [{ test: 60 }, { test: 17 }, { test: 8 }],
+//     [{ test: 99 }, { test: 25 }, { test: 10 }],
+//   ),
+// );
+
+// console.log([...Array(7).keys()].map(days => new Date(Date.now() - 86400000 * days)));
+// console.log(`${Math.random().toString(36)} > ${Math.random().toString(36).substring(2)}`);
