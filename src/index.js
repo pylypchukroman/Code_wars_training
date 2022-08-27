@@ -2116,3 +2116,12 @@ function compareTwoArr(arr1, arr2) {
 
 // console.log([...Array(7).keys()].map(days => new Date(Date.now() - 86400000 * days)));
 // console.log(`${Math.random().toString(36)} > ${Math.random().toString(36).substring(2)}`);
+
+// () => new Array(n).fill(Math.floor(Math.random() * 10)),
+function sort(str) {
+  return str
+    .split(' ')
+    .sort((a, b) => +a.match(/(\d+)/)[1] - +b.match(/(\d+)/)[1])
+    .join(' ');
+}
+// console.log(sort('i2s This1 4start th3e'));
