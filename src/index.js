@@ -2119,9 +2119,24 @@ function compareTwoArr(arr1, arr2) {
 
 // () => new Array(n).fill(Math.floor(Math.random() * 10)),
 function sort(str) {
-  return str
-    .split(' ')
-    .sort((a, b) => +a.match(/(\d+)/)[1] - +b.match(/(\d+)/)[1])
-    .join(' ');
+  return str.length < 1
+    ? ''
+    : str
+        .split(' ')
+        .sort((a, b) => +a.match(/(\d+)/)[1] - +b.match(/(\d+)/)[1])
+        .join(' ');
 }
 // console.log(sort('i2s This1 4start th3e'));
+////
+function rev(arr) {
+  const newArr = [...arr];
+  let result = [];
+  while (result.length != arr.length) {
+    result.push(newArr.shift());
+    result.push(newArr.pop());
+    newArr.reverse();
+  }
+  return result;
+}
+// console.log(rev([1, 2, 3, 4, 5, 6]));
+//

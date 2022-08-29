@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Заголовок страницы</title>
+    <link rel="stylesheet" href="./sass/main.scss" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
@@ -13,34 +14,19 @@
   </head>
   <body>
     <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
-    <p>Click the button to display a random number between 1 and 10.</p>
-
-    <button onclick="foo(2, 2, 4)">Try it</button>
-
-    <p id="demo"></p>
-
-    <script>
-      function foo(x, y, z) {
-        var a = new Array(x).fill(new Array(y).fill(new Array(z)));
-
-        for (var k = 0; k < x; ++k) {
-          document.getElementById('demo').innerHTML =
-            document.getElementById('demo').innerHTML + ' # ';
-          for (var j = 0; j < y; ++j) {
-            for (var i = 0; i < z; ++i) {
-              var n = Math.floor(Math.random() * 10 + 1);
-              a[k][j][i] = n;
-              document.getElementById('demo').innerHTML =
-                document.getElementById('demo').innerHTML + ' ' + n;
-            }
-            document.getElementById('demo').innerHTML =
-              document.getElementById('demo').innerHTML + ' | ';
-          }
-        }
-
-        return a;
-      }
-    </script>
+    <div>
+      <h2>Chat</h2>
+      <ul>
+        <li>
+          <p>Message 1</p>
+        </li>
+        <hr />
+        <li>
+          <p>Message 2</p>
+        </li>
+        <hr />
+      </ul>
+    </div>
 
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>
