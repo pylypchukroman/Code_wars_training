@@ -2140,3 +2140,11 @@ function rev(arr) {
 }
 // console.log(rev([1, 2, 3, 4, 5, 6]));
 //
+function longest_consec(strarr, k) {
+  return k < 0
+    ? ''
+    : strarr.length < 1
+    ? ''
+    : [...strarr].sort((a, b) => b.length - a.length)[0] + strarr[k];
+}
+// console.log(longest_consec(['zone', 'abigail', 'theta', 'form', 'libe', 'zas'], -2));
