@@ -2148,3 +2148,18 @@ function longest_consec(strarr, k) {
     : [...strarr].sort((a, b) => b.length - a.length)[0] + strarr[k];
 }
 // console.log(longest_consec(['zone', 'abigail', 'theta', 'form', 'libe', 'zas'], -2));
+function loadGraine(levels) {
+  if (levels.length < 3) {
+    return 0;
+  }
+  const leftSide = levels.shift();
+  const rightSide = levels.pop();
+
+  const maxLoadHeight = leftSide < rightSide ? leftSide : rightSide;
+  const grain = levels
+    .map(level => (level > maxLoadHeight ? (level = maxLoadHeight) : level))
+    .map(level => (level === 0 ? level + maxLoadHeight : maxLoadHeight - 1))
+    .reduce((acc, el) => (acc += el));
+  return grain;
+}
+// console.log(loadGraine([4, 1, 3]));
