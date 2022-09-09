@@ -2163,3 +2163,30 @@ function loadGraine(levels) {
   return grain;
 }
 // console.log(loadGraine([4, 1, 3]));
+
+const recursion = (levels, res, counter) => {
+  let temp = [...res];
+  if (counter < levels.length - 1) {
+    if (temp[counter - 1] > temp[counter]) {
+      temp[counter] = temp[counter - 1];
+    }
+    temp = [...recursion(levels, temp, counter + 1)];
+  }
+  if (temp[counter - 1] > temp[counter]) {
+    if (levels[counter - 1] > levels[counter]) {
+      temp[counter - 1] = levels[counter - 1];
+    } else {
+      temp[counter - 1] = temp[counter];
+    }
+  }
+  return temp;
+};
+
+function loadGrain(levels) {
+  return [...recursion(levels, levels, 1)].reduce(
+    (acc, cur, index) => (acc += cur - levels[index]),
+    0,
+  );
+}
+
+console.log(loadGrain([]));
